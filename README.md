@@ -15,9 +15,6 @@ An AI study app: structured 4-phase study sessions, a freeform AI teacher, a tas
 
 ## Setup
 
-Requires **Node.js 22+** (it uses the built-in `node:sqlite` module) and a **free Gemini API key** — no credit card needed.
-
-1. Get a key at **https://aistudio.google.com/apikey** → *Create API key*, and copy it.
 
 **On Windows**, that's the only step — **double-click `start.bat`**. It installs everything, asks for your key once, and opens the app. Skip the rest of this section.
 
@@ -34,9 +31,6 @@ The setup screen only appears when no key is configured, and only for a browser 
 
 Open http://localhost:3000, create an account, and start studying. Google sign-in and Stripe billing are optional — the app runs fully without them (see `.env.example`).
 
-> ⚠️ **Gemini's free tier is not private.** Per [Google's API terms](https://ai.google.dev/gemini-api/terms), on the unpaid tier Google uses your prompts and responses to improve its products, and human reviewers may read them. Google's own advice is: *"Do not submit sensitive, confidential, or personal information to the Unpaid Services."* Enabling billing on your Google Cloud project switches this off. Keep it in mind for anything you'd rather not have reviewed.
-
-The free tier is also rate-limited, and the **per-minute** cap is the one you'll actually notice: `gemini-3.6-flash` allows only **5 requests per minute**, so firing off several messages back-to-back will get you a "wait about N seconds" message. There's a daily cap too (a few hundred requests, depending on model). Check your live limits in [AI Studio](https://aistudio.google.com/).
 
 ## Deploy to a live URL (optional)
 
